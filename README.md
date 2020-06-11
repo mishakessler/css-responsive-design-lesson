@@ -1,32 +1,5 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Responsive CSS Design
 
-- [! Responsive CSS Design](#img-srchttpsga-dashs3amazonawscomproductionassetslogo-9f88ae6c9c3871690e33280fcf557f33png-alt-Responsive-CSS-Design)
-  - [LEARNING OBJECTIVES](#LEARNING-OBJECTIVES)
-  - [Contextual Review](#Contextual-Review)
-    - [CSS Selectors & Specificity](#CSS-Selectors--Specificity)
-    - [Organizing Your Stylesheet](#Organizing-Your-Stylesheet)
-  - [Introduction](#Introduction)
-  - [CSS Units](#CSS-Units)
-    - [Absolute Values](#Absolute-Values)
-    - [Relative Values](#Relative-Values)
-    - [Calculated Values](#Calculated-Values)
-    - [Extremely Rare Values](#Extremely-Rare-Values)
-      - [Resolution & Pixel-Density Values](#Resolution--Pixel-Density-Values)
-      - [`var` Values](#var-Values)
-      - [`rhythm` Values](#rhythm-Values)
-    - [The `!important` Exception](#The-important-Exception)
-  - [Media Queries](#Media-Queries)
-    - [Common Resolutions](#Common-Resolutions)
-    - [Breakpoints](#Breakpoints)
-    - [Responsive Developer Tools](#Responsive-Developer-Tools)
-  - [Common Breakpoints](#Common-Breakpoints)
-  - [Troubleshooting Responsiveness with Dev Tools](#Troubleshooting-Responsiveness-with-Dev-Tools)
-  - [Self-Directed Learning](#Self-Directed-Learning)
-    - [Videos](#Videos)
-    - [Readings](#Readings)
-
-***
-
 ## LEARNING OBJECTIVES
 
 During this lesson, we're going to touch on:
@@ -37,40 +10,28 @@ During this lesson, we're going to touch on:
 - Understanding and planning for responsive screen sizes, including identifying breakpoints and implementing media queries.
 - Understanding how CSS cascade– and the importance of organization of your code, to utilize the cascade effectively– will affect your app.
 
-***
+---
 
 ## Contextual Review
 
 ### CSS Selectors & Specificity
 
-Selectors (ie........)
+Remember the different types of selectors?
 
+1. Simple Selectors (ie: `div`, `.class`, or `#id` names)
+1. Pseudo Class Selectors (ie: `link:hover`, `input:required`, `input:not(required)`)
+1. Pseudo Element Selectors (ie:
+1. Combinator (Descendant, Child, Sibling) Selectors (ie: `div > p`)
 
-
-
-
-Specificity will override cascading.
-
-
-
-
-
+Specificity
 
 ### Organizing Your Stylesheet
 
-Personal Preferences (alphabet, specificity, pseudo, media queries, single global sheet versus component based )
+Personal Preferences (Alphabetic? By specificity? What about pseudo classes and media queries? A single global sheet or multiple sheets? Component styling?)
 
+Never, never, never repeat the same selector with the same specificity. (Media queries take a higher specificity, so of course that's allowed.)
 
-
-
-
-Never, never, never repeat a selector (except for media queries)
-
-
-
-
-
-***
+---
 
 ## Introduction
 
@@ -92,11 +53,11 @@ From Wikipedia: "Responsive web design (RWD) is a web design approach aimed at c
 <summary><strong>Responsive Design is not device-specific. Why?</strong></summary>
 <br>
 
-A responsive site doesn't just look good on the _newest_ phone, watch, tablet, or mega-screen; it should look good on _any_ screen– and, on desktop screens, at any width of the browser window. This might seem impossible, but it's relatively straightforward!
+A responsive site doesn't just look good on the _newest_ phone, watch, tablet, or mega-screen; it should look good on _any_ screen– and, on desktop screens, at any width of the browser window. This might seem impossible, but it's relatively straightforward!
 
 <p align="center">
 
-  ![Responsive Design](https://media2.giphy.com/media/uOZg6EKGGZG5G/source.gif)
+![Responsive Design](https://media2.giphy.com/media/uOZg6EKGGZG5G/source.gif)
 
 </p>
 
@@ -112,7 +73,7 @@ Let's dive in!
 
 <br>
 
-***
+---
 
 ## CSS Units
 
@@ -153,7 +114,7 @@ Tangentially, while absolute lengths become less common in digital design, they 
 
 Short answer? It's complicated!
 
-As you become more comfortable with CSS, you'll begin to appreciate the power of absolute values when they're needed, but best practice discourages absolute values– **especially** any values besides the pixel– and even then, try use them selectively.
+As you become more comfortable with CSS, you'll begin to appreciate the power of absolute values when they're needed, but best practice discourages absolute values– **especially** any values besides the pixel– and even then, try use them selectively.
 
 I mean, have you seen the absolutely epic [SpaceJam.com](https://www.spacejam.com/) website?
 
@@ -212,7 +173,7 @@ This would be great if your viewport was _always_ 1000px in height, but then you
 
 Eyeballing your app, you decide to reassign the height of the body div, this time opting for a relative value of `92vh`, thinking this will save some effort in the future.
 
-Again, this would be great if your 100px header was _always_ exactly 8% of your viewport height, but that's just not going to be the case. 
+Again, this would be great if your 100px header was _always_ exactly 8% of your viewport height, but that's just not going to be the case.
 
 </details>
 
@@ -269,7 +230,7 @@ Please note, this `!important` exception is considered **bad practice**, since i
 
 <br>
 
-***
+---
 
 ## Media Queries
 
@@ -336,13 +297,13 @@ Let's think about some common resolutions in use, using Apple devices:
 
 And don't forget the market share of website visitors worldwide by device type:
 
-<div id="desktop+mobile+tablet-comparison-ww-monthly-201905-202005" width="600" height="400" style="width:600px; height: 400px;"></div><p>Source: <a href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet">StatCounter Global Stats - Platform Comparison Market Share</a></p><script type="text/javascript" src="https://www.statcounter.com/js/fusioncharts.js"></script><script type="text/javascript" src="https://gs.statcounter.com/chart.php?desktop+mobile+tablet-comparison-ww-monthly-201905-202005&chartWidth=600"></script>
+<a href="https://gs.statcounter.com/platform-market-share/desktop-mobile-tablet">StatCounter Global Stats - Platform Comparison Market Share</a>
 
 <br>
 
 ### Breakpoints
 
-While there are commonly used breakpoints, there's no "boilerplate" for your  best approach to identifying the size of a media query is to test your site for breakpoints. A breakpoint is simply a specific browser width where the layout either breaks or no longer follows the intended design.
+While there are commonly used breakpoints, there's no "boilerplate" for your best approach to identifying the size of a media query is to test your site for breakpoints. A breakpoint is simply a specific browser width where the layout either breaks or no longer follows the intended design.
 
 Another way to think about it: The design looks 'off' or just plain bad!
 
@@ -358,7 +319,7 @@ If you see an unintended or unacceptable change occur in the design or layout, y
 
 <br>
 
-***
+---
 
 ## Common Breakpoints
 
@@ -382,17 +343,29 @@ Extra large devices (large laptops and desktops, 1200px and up)
 Alternatively, you may see them like this:
 
 ```css
-@media all and (min-width:1200px){ ... }
-@media all and (min-width: 960px) and (max-width: 1199px) { ... }
-@media all and (min-width: 768px) and (max-width: 959px) { ... }
-@media all and (min-width: 480px) and (max-width: 767px){ ... }
-@media all and (max-width: 599px) { ... }
-@media all and (max-width: 479px) { ... }
+@media all and (min-width: 1200px) {
+  ...;
+}
+@media all and (min-width: 960px) and (max-width: 1199px) {
+  ...;
+}
+@media all and (min-width: 768px) and (max-width: 959px) {
+  ...;
+}
+@media all and (min-width: 480px) and (max-width: 767px) {
+  ...;
+}
+@media all and (max-width: 599px) {
+  ...;
+}
+@media all and (max-width: 479px) {
+  ...;
+}
 ```
 
 <br>
 
-***
+---
 
 ## Troubleshooting Responsiveness with Dev Tools
 
@@ -406,8 +379,8 @@ Here's the thing: CSS is frustrating. Very frustrating.
 
 <p align="center">
 
-  ![pokemon](/assets/pikachu1.jpg)
-  
+![pokemon](/assets/pikachu1.jpg)
+
 </p>
 
 </details>
@@ -420,8 +393,8 @@ Here's the thing: CSS is frustrating. Very frustrating.
 
 <p align="center">
 
-  ![pokemon](/assets/flexbox1.jpg)
-  
+![pokemon](/assets/flexbox1.jpg)
+
 </p>
 
 </details>
@@ -434,8 +407,8 @@ Here's the thing: CSS is frustrating. Very frustrating.
 
 <p align="center">
 
-  ![pokemon](/assets/flexbox2.jpg)
-  
+![pokemon](/assets/flexbox2.jpg)
+
 </p>
 
 </details>
@@ -448,8 +421,8 @@ Here's the thing: CSS is frustrating. Very frustrating.
 
 <p align="center">
 
-  ![pokemon](/assets/breakpoint.png)
-  
+![pokemon](/assets/breakpoint.png)
+
 </p>
 
 </details>
@@ -462,8 +435,8 @@ Here's the thing: CSS is frustrating. Very frustrating.
 
 <p align="center">
 
-  ![pokemon](/assets/pickachu2.png)
-  
+![pokemon](/assets/pickachu2.png)
+
 </p>
 
 </details>
@@ -476,16 +449,15 @@ Here's the thing: CSS is frustrating. Very frustrating.
 
 <p align="center">
 
-  ![pokemon](/assets/opacity.png)
-  
+![pokemon](/assets/opacity.png)
+
 </p>
 
 </details>
 
 <br>
 
-
-***
+---
 
 ## Self-Directed Learning
 
